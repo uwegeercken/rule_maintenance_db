@@ -1,6 +1,8 @@
--- MySQL dump 10.14  Distrib 5.5.37-MariaDB, for Linux (x86_64)
+CREATE DATABASE  IF NOT EXISTS `ruleengine_rules` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `ruleengine_rules`;
+-- MySQL dump 10.13  Distrib 5.6.13, for linux-glibc2.5 (x86_64)
 --
--- Host: localhost    Database: ruleengine_rules
+-- Host: 127.0.0.1    Database: ruleengine_rules
 -- ------------------------------------------------------
 -- Server version	5.5.37-MariaDB
 
@@ -54,6 +56,7 @@ CREATE TABLE `check` (
   `name` varchar(80) NOT NULL,
   `description` varchar(255) DEFAULT NULL,
   `name_descriptive` varchar(255) DEFAULT NULL,
+  `package` varchar(80) DEFAULT NULL,
   `check_single_field` tinyint(1) DEFAULT NULL,
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
@@ -66,7 +69,7 @@ CREATE TABLE `check` (
 
 LOCK TABLES `check` WRITE;
 /*!40000 ALTER TABLE `check` DISABLE KEYS */;
-INSERT INTO `check` VALUES (1,'CheckIsEqual','Check for equality of values','is equal to',0,'2014-04-16 14:10:45'),(2,'CheckIsNotEqual','Check if values are not equal','is not equal to',0,'2014-04-17 23:04:34'),(3,'CheckContains','Check if one String contains another String','contains',0,'2014-04-16 14:10:45'),(4,'CheckNotContains','Check if one String does not contain another String','does not contain',0,'2014-04-16 14:10:45'),(5,'CheckIsUppercase','Check if a String contains upper case characters only','is uppercase',1,'2014-04-16 14:11:30'),(6,'CheckIsLowercase','Check if a String contains lower case characters only','is lowercase',1,'2014-04-16 14:11:30'),(7,'CheckEndsWith','Check if a String ends with a certain String','ends with',0,'2014-04-16 14:10:45'),(8,'CheckNotEndsWith','Check if a String does not end with a certain String','does not end with',0,'2014-04-16 14:10:45'),(9,'CheckStartsWith','Check if a String starts with a certain String','starts with',0,'2014-04-16 14:10:45'),(10,'CheckNotStartsWith','Check if a String does not start with a certain String','does not start with',0,'2014-04-16 14:10:45'),(11,'CheckIsGreater','Check if a numeric value is greater than the other one. In case of a String checks if the length of a String is greater than the other one','is greater than',0,'2014-04-16 14:10:45'),(12,'CheckIsSmaller','Check if a numeric value is smaller than the other one. In case of a String checks if the length of a String is smaller than the other one','is smaller than',0,'2014-04-16 14:10:45'),(13,'CheckIsGreaterOrEqual','Check if a numeric value is greater or equal than the other one. In case of a string checks if the length of a String is greater or equal than the other one','is greater or equal than',0,'2014-04-16 14:10:45'),(14,'CheckIsSmallerOrEqual','Check if a numeric value is smaller or equal than the other one. In case of a string checks if the length of a String is smaller or equal than the other one','is smaller or equal than',0,'2014-04-16 14:10:45'),(15,'CheckIsInList','Checks if a string is contained in a list of values. The list is represented by a string where the individual values are seperated by a comma','is in list',0,'2014-04-16 14:10:45'),(16,'CheckIsNotInList','Checks if a string is not contained in a list of values. The list is represented by a string where the individual values are seperated by a comma','is not in list',0,'2014-04-16 14:10:45'),(17,'CheckIsBetween','Checks if a numeric value is between two given values','is between',0,'2014-04-16 14:10:45'),(18,'CheckIsNotBetween','Checks if a numeric value is not between two given values','is not between',0,'2014-04-16 14:10:45'),(19,'CheckIsNumeric','Checks if a value is numeric where all characters are numbers','is numeric',1,'2014-04-16 14:11:30'),(20,'CheckIsEmpty','Checks if a string value is empty, meaning of zero length','is empty',1,'2014-04-16 17:12:54'),(21,'CheckIsNotEmpty','Checks if a string value is not empty, meaning it\'s length is greater than zero','is not empty',1,'2014-04-16 17:12:54'),(22,'CheckIsNull','Checks if a value is null','is null',1,'2014-04-16 14:11:30'),(23,'CheckIsNotNull','Checks if a value is not null','is not null',1,'2014-04-16 14:11:30'),(24,'CheckLength','Checks if a string has a defined length. In case of an integer, checks the number of digits the integer consists of','has length',0,'2014-04-16 14:10:45'),(25,'CheckMatches','Checks if a string matches another one, using a regular expression pattern','matches',0,'2014-04-16 14:10:45'),(26,'CheckNotMatches','Checks if a string does not match another one, using a regular expression pattern','not matches',0,'2014-04-16 14:10:45'),(27,'CheckSoundsLike','Checks if a string sounds like the other, using the soundex algorithm','sounds like',0,'2014-04-16 14:10:45'),(28,'CheckNotSoundsLike','Checks if a string does not sound like the other, using the soundex algorithm','not sounds like',0,'2014-04-16 14:10:45'),(29,'CheckIsNegativeNumber','Checks if a number is smaller than zero','is negativ number',1,'2014-04-16 14:11:30');
+INSERT INTO `check` VALUES (1,'CheckIsEqual','Check for equality of values','is equal to','com.datamelt.rules.implementation',0,'2014-07-02 18:42:22'),(2,'CheckIsNotEqual','Check if values are not equal','is not equal to','com.datamelt.rules.implementation',0,'2014-07-02 18:42:22'),(3,'CheckContains','Check if one String contains another String','contains','com.datamelt.rules.implementation',0,'2014-07-02 18:42:22'),(4,'CheckNotContains','Check if one String does not contain another String','does not contain','com.datamelt.rules.implementation',0,'2014-07-02 18:42:22'),(5,'CheckIsUppercase','Check if a String contains upper case characters only','is uppercase','com.datamelt.rules.implementation',1,'2014-07-02 18:42:22'),(6,'CheckIsLowercase','Check if a String contains lower case characters only','is lowercase','com.datamelt.rules.implementation',1,'2014-07-02 18:42:22'),(7,'CheckEndsWith','Check if a String ends with a certain String','ends with','com.datamelt.rules.implementation',0,'2014-07-02 18:42:22'),(8,'CheckNotEndsWith','Check if a String does not end with a certain String','does not end with','com.datamelt.rules.implementation',0,'2014-07-02 18:42:22'),(9,'CheckStartsWith','Check if a String starts with a certain String','starts with','com.datamelt.rules.implementation',0,'2014-07-02 18:42:22'),(10,'CheckNotStartsWith','Check if a String does not start with a certain String','does not start with','com.datamelt.rules.implementation',0,'2014-07-02 18:42:22'),(11,'CheckIsGreater','Check if a numeric value is greater than the other one. In case of a String checks if the length of a String is greater than the other one','is greater than','com.datamelt.rules.implementation',0,'2014-07-02 18:42:22'),(12,'CheckIsSmaller','Check if a numeric value is smaller than the other one. In case of a String checks if the length of a String is smaller than the other one','is smaller than','com.datamelt.rules.implementation',0,'2014-07-02 18:42:22'),(13,'CheckIsGreaterOrEqual','Check if a numeric value is greater or equal than the other one. In case of a string checks if the length of a String is greater or equal than the other one','is greater or equal than','com.datamelt.rules.implementation',0,'2014-07-02 18:42:22'),(14,'CheckIsSmallerOrEqual','Check if a numeric value is smaller or equal than the other one. In case of a string checks if the length of a String is smaller or equal than the other one','is smaller or equal than','com.datamelt.rules.implementation',0,'2014-07-02 18:42:22'),(15,'CheckIsInList','Checks if a string is contained in a list of values. The list is represented by a string where the individual values are seperated by a comma','is in list','com.datamelt.rules.implementation',0,'2014-07-02 18:42:22'),(16,'CheckIsNotInList','Checks if a string is not contained in a list of values. The list is represented by a string where the individual values are seperated by a comma','is not in list','com.datamelt.rules.implementation',0,'2014-07-02 18:42:22'),(17,'CheckIsBetween','Checks if a numeric value is between two given values','is between','com.datamelt.rules.implementation',0,'2014-07-02 18:42:22'),(18,'CheckIsNotBetween','Checks if a numeric value is not between two given values','is not between','com.datamelt.rules.implementation',0,'2014-07-02 18:42:22'),(19,'CheckIsNumeric','Checks if a value is numeric where all characters are numbers','is numeric','com.datamelt.rules.implementation',1,'2014-07-02 18:42:22'),(20,'CheckIsEmpty','Checks if a string value is empty, meaning of zero length','is empty','com.datamelt.rules.implementation',1,'2014-07-02 18:42:22'),(21,'CheckIsNotEmpty','Checks if a string value is not empty, meaning it\'s length is greater than zero','is not empty','com.datamelt.rules.implementation',1,'2014-07-02 18:42:22'),(22,'CheckIsNull','Checks if a value is null','is null','com.datamelt.rules.implementation',1,'2014-07-02 18:42:22'),(23,'CheckIsNotNull','Checks if a value is not null','is not null','com.datamelt.rules.implementation',1,'2014-07-02 18:42:22'),(24,'CheckLength','Checks if a string has a defined length. In case of an integer, checks the number of digits the integer consists of','has length','com.datamelt.rules.implementation',0,'2014-07-02 18:42:22'),(25,'CheckMatches','Checks if a string matches another one, using a regular expression pattern','matches','com.datamelt.rules.implementation',0,'2014-07-02 18:42:22'),(26,'CheckNotMatches','Checks if a string does not match another one, using a regular expression pattern','not matches','com.datamelt.rules.implementation',0,'2014-07-02 18:42:22'),(27,'CheckSoundsLike','Checks if a string sounds like the other, using the soundex algorithm','sounds like','com.datamelt.rules.implementation',0,'2014-07-02 18:42:22'),(28,'CheckNotSoundsLike','Checks if a string does not sound like the other, using the soundex algorithm','not sounds like','com.datamelt.rules.implementation',0,'2014-07-02 18:42:22'),(29,'CheckIsNegativeNumber','Checks if a number is smaller than zero','is negativ number','com.datamelt.rules.implementation',1,'2014-07-02 18:42:22');
 /*!40000 ALTER TABLE `check` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,7 +116,7 @@ CREATE TABLE `groupuser` (
   UNIQUE KEY `idx_groupuser` (`user_id`,`groups_id`),
   KEY `idx_user` (`user_id`),
   KEY `idx_group` (`groups_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,7 +125,7 @@ CREATE TABLE `groupuser` (
 
 LOCK TABLES `groupuser` WRITE;
 /*!40000 ALTER TABLE `groupuser` DISABLE KEYS */;
-INSERT INTO `groupuser` VALUES (1,1,1,'2014-04-08 14:37:02'),(2,1,2,'2014-04-08 14:37:02');
+INSERT INTO `groupuser` VALUES (1,1,2,'2014-07-02 18:28:30'),(2,1,1,'2014-07-02 18:28:30');
 /*!40000 ALTER TABLE `groupuser` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -145,8 +148,17 @@ CREATE TABLE `project` (
   `last_update_user_id` int(10) DEFAULT NULL,
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `project`
+--
+
+LOCK TABLES `project` WRITE;
+/*!40000 ALTER TABLE `project` DISABLE KEYS */;
+/*!40000 ALTER TABLE `project` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `projectuser`
@@ -166,6 +178,15 @@ CREATE TABLE `projectuser` (
   KEY `idx_project` (`project_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `projectuser`
+--
+
+LOCK TABLES `projectuser` WRITE;
+/*!40000 ALTER TABLE `projectuser` DISABLE KEYS */;
+/*!40000 ALTER TABLE `projectuser` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `rule`
@@ -197,8 +218,17 @@ CREATE TABLE `rule` (
   `message_failed` varchar(255) NOT NULL,
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=92 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=103 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rule`
+--
+
+LOCK TABLES `rule` WRITE;
+/*!40000 ALTER TABLE `rule` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rule` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `rulegroup`
@@ -217,8 +247,17 @@ CREATE TABLE `rulegroup` (
   `valid_until` date NOT NULL,
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rulegroup`
+--
+
+LOCK TABLES `rulegroup` WRITE;
+/*!40000 ALTER TABLE `rulegroup` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rulegroup` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `rulegroupaction`
@@ -253,8 +292,17 @@ CREATE TABLE `rulegroupaction` (
   `execute_if` varchar(20) DEFAULT NULL,
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rulegroupaction`
+--
+
+LOCK TABLES `rulegroupaction` WRITE;
+/*!40000 ALTER TABLE `rulegroupaction` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rulegroupaction` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `rulesubgroup`
@@ -273,8 +321,17 @@ CREATE TABLE `rulesubgroup` (
   `ruleoperator` enum('and','or') NOT NULL,
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rulesubgroup`
+--
+
+LOCK TABLES `rulesubgroup` WRITE;
+/*!40000 ALTER TABLE `rulesubgroup` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rulesubgroup` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `types`
@@ -321,7 +378,7 @@ CREATE TABLE `user` (
   `is_admin` tinyint(1) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_userid` (`userid`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -330,7 +387,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'admin','admin','*4ACFE3202A5FF5CF467898FC58AAB1D615029441','2014-06-02 16:50:36','2014-06-02 06:50:36',0,'0000-00-00','0000-00-00',1);
+INSERT INTO `user` VALUES (1,'admin','admin user','*4ACFE3202A5FF5CF467898FC58AAB1D615029441','2014-07-02 19:57:26','2014-07-02 09:55:11',0,'0000-00-00','0000-00-00',1);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -343,4 +400,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-06-02 19:17:06
+-- Dump completed on 2014-07-02 22:00:39
