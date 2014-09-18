@@ -25,4 +25,4 @@ the rule maintenance application uses the table "user" for authentication. the u
 
 
 uwe geercken - uwe.geercken@web.de
-last update: 2014-08-06
+last update: 2014-09-18
