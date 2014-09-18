@@ -1,6 +1,7 @@
 rule_maintenance_db
 ===================
-MySQL database for the rule maintenance web application.
+MySQL database for the rule maintenance web application. contains the required tables for
+the rule_maintenance web app to work.
 
 - create the database: ruleengine_rules
 - import the sql file to the server
