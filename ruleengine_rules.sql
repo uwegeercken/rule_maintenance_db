@@ -375,12 +375,12 @@ CREATE TABLE `user` (
   `userid` varchar(25) NOT NULL,
   `name` varchar(80) NOT NULL DEFAULT '',
   `password` varchar(255) DEFAULT NULL,
-  `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `lastlogin` datetime DEFAULT NULL,
-  `deleted` tinyint(1) unsigned DEFAULT '0',
-  `deleted_date` date DEFAULT '0000-00-00',
+  `deactivated` tinyint(1) unsigned DEFAULT '0',
+  `deactivated_date` date DEFAULT '0000-00-00',
   `password_update_date` date DEFAULT '0000-00-00',
   `is_admin` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,  
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_userid` (`userid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
