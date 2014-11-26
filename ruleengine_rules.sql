@@ -138,12 +138,15 @@ CREATE TABLE `project` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(80) NOT NULL,
   `description` varchar(255) DEFAULT NULL,
+  `is_private` tinyint(1) DEFAULT '0',
   `database_hostname` varchar(80) DEFAULT NULL,
   `database_name` varchar(80) DEFAULT NULL,
   `database_tablename` varchar(80) DEFAULT NULL,
   `database_userid` varchar(80) DEFAULT NULL,
   `database_user_password` varchar(80) DEFAULT NULL,
   `last_update_user_id` int(10) DEFAULT NULL,
+  `owner_user_id` int(10) DEFAULT NULL,
+  `group_id` int(10) DEFAULT NULL,
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
