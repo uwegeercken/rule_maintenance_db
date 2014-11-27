@@ -215,6 +215,8 @@ CREATE TABLE `rule` (
   `object2_type_id` int(10) DEFAULT NULL,
   `expectedvalue` varchar(255) DEFAULT NULL,
   `expectedvalue_type_id` int(10) DEFAULT NULL,
+  `additional_parameter` varchar(255) DEFAULT NULL,
+  `additional_parameter_type_id` int(10) DEFAULT NULL,
   `message_passed` varchar(255) NOT NULL,
   `message_failed` varchar(255) NOT NULL,
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
