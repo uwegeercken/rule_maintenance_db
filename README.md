@@ -8,6 +8,8 @@ the rule_maintenance web app to work.
 
 the rule maintenance application uses the table "user" for authentication. the user is admin and the password is also admin. use this user to login to the web application. you can change the password through the web interface.
 
+the latest version of this schema introduces some changes as of November 26, 2014 - some fields have been added and renamed.
+
    Copyright (C) 2008-2014  Uwe Geercken
     
     This program is free software: you can redistribute it and/or modify
