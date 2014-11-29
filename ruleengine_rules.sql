@@ -95,7 +95,7 @@ CREATE TABLE `groups` (
 
 LOCK TABLES `groups` WRITE;
 /*!40000 ALTER TABLE `groups` DISABLE KEYS */;
-INSERT INTO `groups` VALUES (1,'Admin','Admin Group','2014-04-08 14:35:19'),(2,'User','User Group','2014-04-08 14:35:33'),(3,'User_ro','Read-only User Group','2014-04-08 14:35:49');
+INSERT INTO `groups` VALUES (1,'Admin','Admin Group','2014-04-08 14:35:19');
 /*!40000 ALTER TABLE `groups` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -124,7 +124,7 @@ CREATE TABLE `groupuser` (
 
 LOCK TABLES `groupuser` WRITE;
 /*!40000 ALTER TABLE `groupuser` DISABLE KEYS */;
-INSERT INTO `groupuser` VALUES (33,1,1,'2014-07-02 20:05:13'),(34,1,2,'2014-07-02 20:05:14');
+INSERT INTO `groupuser` VALUES (33,1,1,'2014-07-02 20:05:13');
 /*!40000 ALTER TABLE `groupuser` ENABLE KEYS */;
 UNLOCK TABLES;
 
