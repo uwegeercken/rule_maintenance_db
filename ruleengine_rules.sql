@@ -16,6 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Create database if it does not exists
+--
+
+CREATE DATABASE IF NOT EXISTS ruleengine_rules;
+use ruleengine_rules;
+
+--
 -- Table structure for table `action`
 --
 
