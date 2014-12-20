@@ -389,7 +389,6 @@ CREATE TABLE `user` (
   `deactivated` tinyint(1) unsigned DEFAULT '0',
   `deactivated_date` date DEFAULT '0000-00-00',
   `password_update_date` date DEFAULT '0000-00-00',
-  `is_admin` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,  
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_userid` (`userid`)
@@ -402,7 +401,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'admin','admin user','*4ACFE3202A5FF5CF467898FC58AAB1D615029441','2014-01-01 15:31:08',0,null,'2014-01-01',1,'2014-01-01 00:00:00');
+INSERT INTO `user` VALUES (1,'admin','admin user','*4ACFE3202A5FF5CF467898FC58AAB1D615029441','2014-01-01 15:31:08',0,null,'2014-01-01','2014-01-01 00:00:00');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
