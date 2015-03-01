@@ -376,6 +376,26 @@ INSERT INTO `types` VALUES (1,'string','2014-04-13 15:28:35'),(2,'integer','2014
 UNLOCK TABLES;
 
 --
+-- Table structure for table `history`
+--
+
+DROP TABLE IF EXISTS `history`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `history` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `type` varchar(20) NOT NULL,
+  `type_id` int(10) unsigned NOT NULL,
+  `user_id` int(10) DEFAULT NULL,
+  `parent_1` int(10) DEFAULT NULL,
+  `parent_2` int(10) DEFAULT NULL,
+  `parent_3` int(10) DEFAULT NULL,
+  `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8
+
+--
 -- Table structure for table `user`
 --
 
