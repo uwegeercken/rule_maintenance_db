@@ -12,7 +12,7 @@ This will create the database (named: ruleengine_rules), the required tables and
 
 the rule maintenance application uses the table "user" for authentication. the user is admin and the password is also admin. use this user to login to the web application. you can change the password through the web interface.
 
-the latest version of this schema introduces some changes as of November 26, 2014 - some fields have been added and renamed. If you use this schema, make sure you also use the latest version of the web application.
+the latest version of this schema introduces some changes as of March 04, 2015 - some fields have been added and removed. If you use this schema, make sure you also use the latest version of the web application.
 
    Copyright (C) 2008-2015  Uwe Geercken
     
