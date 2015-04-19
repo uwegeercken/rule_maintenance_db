@@ -102,6 +102,16 @@ CREATE TABLE `check_method` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
+-- Dumping data for table `check_method`
+--
+
+LOCK TABLES `check_method` WRITE;
+/*!40000 ALTER TABLE `check_method` DISABLE KEYS */;
+INSERT INTO `check_method` VALUES (1,1,'String','String','Without parameter Strings are compared case sensitive','boolean','Ignore case differences during comparison.',NULL,NULL,NULL,NULL,'2015-04-19 15:08:06'),(2,1,'boolean','boolean',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2015-04-19 14:37:18'),(3,1,'Date','Date',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2015-04-19 14:39:53'),(6,1,'Date','String','Without parameter the String is converted to a Date using the format yyyy-MM-dd','String','Provide a date format different from the default.',NULL,NULL,NULL,NULL,'2015-04-19 15:06:04'),(7,1,'double','double',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2015-04-19 14:54:43'),(8,1,'float','float',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2015-04-19 14:55:07'),(9,1,'integer','integer',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2015-04-19 14:58:35'),(10,1,'long','long',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2015-04-19 14:59:02'),(11,1,'long','integer',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2015-04-19 14:59:10'),(12,1,'integer','long',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2015-04-19 14:59:18');
+/*!40000 ALTER TABLE `check_method` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `groups`
 --
 
