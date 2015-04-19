@@ -82,7 +82,9 @@ UNLOCK TABLES;
 --
 -- Table structure for table `groups`
 --
-
+DROP TABLE IF EXISTS `check_method`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `check_method` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `check_id` int(10) NOT NULL,
