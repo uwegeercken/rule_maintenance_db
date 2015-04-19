@@ -83,6 +83,26 @@ UNLOCK TABLES;
 -- Table structure for table `groups`
 --
 
+CREATE TABLE `check_method` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `check_id` int(10) NOT NULL,
+  `compare` varchar(80) CHARACTER SET latin1 DEFAULT NULL,
+  `compare_to` varchar(80) CHARACTER SET latin1 DEFAULT NULL,
+  `note` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `parameter1` varchar(80) CHARACTER SET latin1 DEFAULT NULL,
+  `parameter1_explanation` varchar(255) DEFAULT NULL,
+  `parameter2` varchar(80) CHARACTER SET latin1 DEFAULT NULL,
+  `parameter2_explanation` varchar(255) DEFAULT NULL,
+  `parameter3` varchar(80) CHARACTER SET latin1 DEFAULT NULL,
+  `parameter3_explanation` varchar(255) DEFAULT NULL,
+  `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Table structure for table `groups`
+--
+
 DROP TABLE IF EXISTS `groups`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
