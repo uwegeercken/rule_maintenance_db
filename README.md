@@ -14,7 +14,7 @@ the rule maintenance application uses the table "user" for authentication. the u
 
 the latest version of this schema introduces some changes as of April 19, 2015 - some definitions have been changed. If you use this schema, make sure you also use the latest version of the web application.
 
-   Copyright (C) 2008-2015  Uwe Geercken
+   Copyright (C) 2008-2016  Uwe Geercken
     
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -31,4 +31,4 @@ the latest version of this schema introduces some changes as of April 19, 2015 -
 
 
 uwe geercken - uwe.geercken@web.de
-last update: 2015-04-19
+last update: 2016-03-24
