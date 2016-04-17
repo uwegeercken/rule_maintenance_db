@@ -1,6 +1,6 @@
 rule_maintenance_db
 ===================
-MySQL database for the rule maintenance web application. contains the required tables for
+MySQL database for the rule maintenance web application. contains the required tables and basic data for
 the rule_maintenance web app to work.
 
 - import the sql file to the server
@@ -10,7 +10,7 @@ mysql -u root -p < ruleengine_rules.sql
 
 This will create the database (named: ruleengine_rules), the required tables and default data required by the web application.
 
-the rule maintenance application uses the table "user" for authentication. the user is admin and the password is also admin. use this user to login to the web application. you can change the password through the web interface.
+the rule maintenance application uses the table "user" for authentication. the initially only configured user is: admin and the password is also: admin. use this user to login to the web application. you can change the password through the web interface.
 
 the latest version of this schema introduces some changes as of April 19, 2015 - some definitions have been changed. If you use this schema, make sure you also use the latest version of the web application.
 
@@ -31,4 +31,4 @@ the latest version of this schema introduces some changes as of April 19, 2015 -
 
 
 uwe geercken - uwe.geercken@web.de
-last update: 2016-03-24
+last update: 2016-04-17
