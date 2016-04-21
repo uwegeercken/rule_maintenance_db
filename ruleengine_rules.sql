@@ -43,6 +43,26 @@ INSERT INTO `action` VALUES (1,'com.datamelt.rules.core.action.StringAction','se
 UNLOCK TABLES;
 
 --
+-- Table structure for table `action_method`
+--
+
+CREATE TABLE `action_method` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `action_id` int(10) NOT NULL,
+  `return_type` varchar(80) CHARACTER SET latin1 DEFAULT NULL,
+  `value_type` varchar(80) CHARACTER SET latin1 DEFAULT NULL,
+  `note` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `parameter1` varchar(80) CHARACTER SET latin1 DEFAULT NULL,
+  `parameter1_explanation` varchar(255) DEFAULT NULL,
+  `parameter2` varchar(80) CHARACTER SET latin1 DEFAULT NULL,
+  `parameter2_explanation` varchar(255) DEFAULT NULL,
+  `parameter3` varchar(80) CHARACTER SET latin1 DEFAULT NULL,
+  `parameter3_explanation` varchar(255) DEFAULT NULL,
+  `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
 -- Table structure for table `check`
 --
 
