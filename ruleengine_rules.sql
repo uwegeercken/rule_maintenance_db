@@ -256,6 +256,27 @@ CREATE TABLE `project` (
 --
 
 --
+-- Table structure for table `reference_fields`
+--
+
+DROP TABLE IF EXISTS `reference_fields`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `reference_fields` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `project_id` int(11) NOT NULL,
+  `name` varchar(80) DEFAULT NULL,
+  `description` varchar(120) DEFAULT NULL,
+  `java_type_id` int(1) NOT NULL,
+  `last_update_user_id` int(10) DEFAULT NULL,
+  `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idx_name` (`project_id`,`name`),
+  KEY `idx_project_id` (`project_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `projectuser`
 --
 
