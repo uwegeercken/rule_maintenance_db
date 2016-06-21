@@ -30,7 +30,7 @@ CREATE TABLE `action` (
   `methoddisplayname` varchar(255) DEFAULT NULL,
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -63,8 +63,9 @@ CREATE TABLE `action_method` (
   `optional_type3` varchar(80) CHARACTER SET latin1 DEFAULT NULL,
   `optional_type3_explanation` varchar(255) DEFAULT NULL,
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=96 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`),
+  KEY `idx_actionid` (`action_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -127,8 +128,9 @@ CREATE TABLE `check_method` (
   `parameter3` varchar(80) CHARACTER SET latin1 DEFAULT NULL,
   `parameter3_explanation` varchar(255) DEFAULT NULL,
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`),
+  KEY `idx_checkid` (`check_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -213,7 +215,8 @@ CREATE TABLE `history` (
   `parent_2` int(10) DEFAULT NULL,
   `parent_3` int(10) DEFAULT NULL,
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `idx_type_typeid_userid` (`type`,`type_id`,`user_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -266,6 +269,7 @@ CREATE TABLE `reference_fields` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `project_id` int(11) NOT NULL,
   `name` varchar(80) DEFAULT NULL,
+  `name_descriptive` varchar(80) NOT NULL,
   `description` varchar(120) DEFAULT NULL,
   `java_type_id` int(1) NOT NULL,
   `last_update_user_id` int(10) DEFAULT NULL,
@@ -327,7 +331,7 @@ CREATE TABLE `rule` (
   `message_failed` varchar(255) NOT NULL,
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  KEY `idx_rule_rulesubgroup_id` (`rulesubgroup_id`)
+  KEY `idx_rulesubgroup_id` (`rulesubgroup_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -352,7 +356,7 @@ CREATE TABLE `rulegroup` (
   `valid_until` date NOT NULL,
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  KEY `idx_rulegroup_project_id` (`project_id`)
+  KEY `idx_project_id` (`project_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -389,7 +393,7 @@ CREATE TABLE `rulegroupaction` (
   `execute_if` varchar(20) DEFAULT NULL,
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  KEY `idx_rulegroupaction_rulegroup_id` (`rulegroup_id`)
+  KEY `idx_rulegroup_id` (`rulegroup_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -414,7 +418,7 @@ CREATE TABLE `rulesubgroup` (
   `ruleoperator` enum('and','or') NOT NULL,
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  KEY `idx_rulesubgroup_rulegroup_id` (`rulegroup_id`)
+  KEY `idx_rulegroup_id` (`rulegroup_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -466,7 +470,8 @@ CREATE TABLE `user` (
   `password_update_date` date DEFAULT '0000-00-00',
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `idx_userid` (`userid`)
+  UNIQUE KEY `idx_userid` (`userid`),
+  KEY `idx_deactivated` (`deactivated`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
