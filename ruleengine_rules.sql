@@ -464,6 +464,7 @@ CREATE TABLE `user` (
   `name` varchar(80) NOT NULL DEFAULT '',
   `password` varchar(255) DEFAULT NULL,
   `email` varchar(80) DEFAULT NULL,
+  `generated_code` VARCHAR(40) NULL DEFAULT NULL,
   `lastlogin` datetime DEFAULT NULL,
   `deactivated` tinyint(1) unsigned DEFAULT '0',
   `deactivated_date` date DEFAULT '0000-00-00',
@@ -481,7 +482,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'admin','admin user','*4ACFE3202A5FF5CF467898FC58AAB1D615029441',NULL,'2016-03-24 21:34:24',0,NULL,'2014-01-01','2016-03-24 20:34:24');
+INSERT INTO `user` VALUES (1,'admin','admin user','*4ACFE3202A5FF5CF467898FC58AAB1D615029441',NULL,NULL,'2000-01-01 00:00:00',0,NULL,'2000-01-01','2016-03-24 20:34:24');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
