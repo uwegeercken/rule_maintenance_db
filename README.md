@@ -1,18 +1,23 @@
 rule_maintenance_db
 ===================
-MySQL database for the rule maintenance web application. contains the required tables and basic data for
+MySQL (or MariaDB) database for the rule maintenance web application. contains the required tables and basic data for
 the rule_maintenance web app to work.
 
-- import the sql file to the server
+- create the database in your MySQL or MariaDB server
 
-example: 
-mysql -u root -p < ruleengine_rules.sql
+To do so, login to your database server and create the database. The default name of the database would be "ruleengine_rules" but you can also use any other name. In the web application for the maintenance of the rulegroups, rules and actions you will be able to specify the database name.
 
-This will create the database (named: ruleengine_rules), the required tables and default data required by the web application.
+- import the sql file to the database server
 
-the rule maintenance application uses the table "user" for authentication. the initially only configured user is: admin and the password is also: admin. use this user to login to the web application. you can change the password through the web interface.
+Example: 
+mysql -u root -p <databasename> < ruleengine_rules.sql
 
-the latest version of this schema introduces some changes as of April 19, 2015 - some definitions have been changed. If you use this schema, make sure you also use the latest version of the web application.
+Note: replace <databasename> with the actual name of the database that you created before.
+
+The command above will create the required tables and default data required by the web application.
+
+The rule maintenance application uses the table "user" for authentication. the initially only configured user is: admin and the password is also: admin. use this user to login to the web application. you can change the password through the web interface.
+
 
    Copyright (C) 2008-2016  Uwe Geercken
     
@@ -31,4 +36,4 @@ the latest version of this schema introduces some changes as of April 19, 2015 -
 
 
 uwe geercken - uwe.geercken@web.de
-last update: 2016-06-21
+last update: 2016-07-16
