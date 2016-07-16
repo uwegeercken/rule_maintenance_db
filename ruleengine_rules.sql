@@ -236,8 +236,6 @@ CREATE TABLE `project` (
   `name` varchar(80) NOT NULL,
   `description` varchar(255) DEFAULT NULL,
   `is_private` tinyint(1) DEFAULT '0',
-  `transformation_filename` varchar(255) DEFAULT NULL,
-  `transformation_stepname` varchar(255) DEFAULT NULL,
   `object_classname` varchar(80) DEFAULT NULL,
   `object_method_getter` varchar(80) DEFAULT NULL,
   `object_method_setter` varchar(80) DEFAULT NULL,
