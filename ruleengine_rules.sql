@@ -279,29 +279,6 @@ CREATE TABLE `reference_fields` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `projectuser`
---
-
-DROP TABLE IF EXISTS `projectuser`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `projectuser` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `user_id` int(10) unsigned NOT NULL DEFAULT '0',
-  `project_id` int(10) unsigned NOT NULL DEFAULT '0',
-  `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `idx_projectuser` (`user_id`,`project_id`),
-  KEY `idx_user` (`user_id`),
-  KEY `idx_project` (`project_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `projectuser`
---
-
---
 -- Table structure for table `rule`
 --
 
