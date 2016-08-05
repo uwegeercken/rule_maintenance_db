@@ -28,7 +28,7 @@ CREATE TABLE `activity_log` (
   `message` varchar(255) DEFAULT NULL,
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM CHARSET=utf8
+) ENGINE=MyISAM CHARSET=utf8;
 
 --
 -- Table structure for table `action`
