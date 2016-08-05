@@ -18,6 +18,21 @@
 --
 -- Table structure for table `action`
 --
+DROP TABLE IF EXISTS `activity_log`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `activity_log` (
+  `id` int(19) NOT NULL AUTO_INCREMENT,
+  `activity_date` datetime DEFAULT NULL,
+  `user_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `message` varchar(255) DEFAULT NULL,
+  `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=utf8
+
+--
+-- Table structure for table `action`
+--
 
 DROP TABLE IF EXISTS `action`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
