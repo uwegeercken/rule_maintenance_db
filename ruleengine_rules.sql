@@ -250,6 +250,7 @@ CREATE TABLE `project` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(80) NOT NULL,
   `description` varchar(255) DEFAULT NULL,
+  `export_filename` varchar(255) DEFAULT NULL,
   `is_private` tinyint(1) DEFAULT '0',
   `object_classname` varchar(80) DEFAULT NULL,
   `object_method_getter` varchar(80) DEFAULT NULL,
