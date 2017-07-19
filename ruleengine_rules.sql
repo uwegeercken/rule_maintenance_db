@@ -100,7 +100,8 @@ INSERT INTO `action` VALUES (1,'Set a value to another value','com.datamelt.rule
 (43,'Subtract minutes from a date','com.datamelt.rules.core.action.DateAction','subtractMinutes','subtract minutes','2016-10-10 23:00:00'),
 (44,'Subtract hours from a date','com.datamelt.rules.core.action.DateAction','subtractHours','subtract hours','2016-10-10 23:00:00'),
 (45,'Subtract seconds from a date','com.datamelt.rules.core.action.DateAction','subtractSeconds','subtract seconds','2016-10-10 23:00:00'),
-(46,'Subtract days from a date','com.datamelt.rules.core.action.DateAction','subtractDays','subtract days','2016-10-10 23:00:00');
+(46,'Subtract days from a date','com.datamelt.rules.core.action.DateAction','subtractDays','subtract days','2016-10-10 23:00:00'),
+(47,'Replace value from mapping file','com.datamelt.rules.core.action.StringAction','replaceValueFromMap','replace value from map','2017-07-19 18:02:00');
 /*!40000 ALTER TABLE `action` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -255,7 +256,8 @@ INSERT INTO `action_method` VALUES (1,4,'String','String, double',NULL,'String',
 (122,4,'String','double, String',NULL,'String','Seperator to be used',NULL,NULL,NULL,NULL,'2016-04-23 14:00:59'),
 (123,4,'String','integer, String',NULL,'String','Seperator to be used',NULL,NULL,NULL,NULL,'2016-04-23 14:00:59'),
 (124,4,'String','float, String',NULL,'String','Seperator to be used',NULL,NULL,NULL,NULL,'2016-04-23 14:00:59'),
-(125,4,'String','long, String',NULL,'String','Seperator to be used',NULL,NULL,NULL,NULL,'2016-04-23 14:00:59');
+(125,4,'String','long, String',NULL,'String','Seperator to be used',NULL,NULL,NULL,NULL,'2016-04-23 14:00:59'),
+(130,47,'String','String, String',NULL,null,null,NULL,NULL,NULL,NULL,'2016-04-23 14:00:59');
 /*!40000 ALTER TABLE `action_method` ENABLE KEYS */;
 UNLOCK TABLES;
 
