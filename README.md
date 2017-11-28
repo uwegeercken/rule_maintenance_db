@@ -3,18 +3,8 @@ rule_maintenance_db
 MySQL (or MariaDB) database for the rule maintenance web application. contains the required tables and basic data for
 the rule_maintenance web app to work.
 
-- create the database in your MySQL or MariaDB server
+The latest version allows to create the database, tables and some default data through the web application. So there is no need that this schema has to be imported manually.
 
-To do so, login to your database server and create the database. The default name of the database would be "ruleengine_rules" but you can also use any other name. In the web application for the maintenance of the rulegroups, rules and actions you will be able to specify the database name.
-
-- import the sql file to the database server
-
-Example:
-mysql -u root -p <databasename> < ruleengine_rules.sql
-
-Note: replace <databasename> with the actual name of the database that you created before.
-
-The command above will create the required tables and default data required by the web application.
 
 The rule maintenance application uses the table "user" for authentication. the initially only configured user is: admin and the password is also: admin. use this user to login to the web application. you can change the password through the web interface.
 
@@ -36,4 +26,4 @@ The rule maintenance application uses the table "user" for authentication. the i
 
 
 uwe geercken - uwe.geercken@web.de
-last update: 2017-05-25
+last update: 2017-11-28
