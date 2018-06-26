@@ -685,7 +685,7 @@ CREATE TABLE `rule` (
   `object2_parametertype_id` int(10) DEFAULT NULL,
   `object2_parameter` varchar(255) DEFAULT NULL,
   `object2_type_id` int(10) DEFAULT NULL,
-  `expectedvalue` varchar(255) DEFAULT NULL,
+  `expectedvalue` mediumtext DEFAULT NULL,
   `expectedvalue_type_id` int(10) DEFAULT NULL,
   `additional_parameter` varchar(255) DEFAULT NULL,
   `additional_parameter_type_id` int(10) DEFAULT NULL,
