@@ -3,7 +3,7 @@ rule_maintenance_db
 MySQL (or MariaDB) database for the rule maintenance web application. contains the required tables and basic data for
 the rule_maintenance web app to work.
 
-The latest version allows to create the database, tables and some default data through the web application. So there is no need that this schema has to be imported manually.
+**The latest version allows to create the database, tables and some default data through the web application. So there is no need that this schema has to be imported manually.**
 
 
 The rule maintenance application uses the table "user" for authentication. the initially only configured user is: admin and the password is also: admin. use this user to login to the web application. you can change the password through the web interface.
